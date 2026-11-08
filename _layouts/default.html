@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{{ page.title }}</title>
+
+  <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="css/bootstrap-glyphicons.css" rel="stylesheet">
+
+  <link rel="bookmark" href="img/ico/favicon-yale.svg" type="image/svg+xml">
+  <link rel="shortcut icon" href="img/ico/favicon-yale.svg" type="image/svg+xml">
+
+  <style>
+    /* Unified Palatino Linotype across the whole site */
+    body {
+      font-family: "Palatino Linotype", "Book Antiqua", Palatino, "EB Garamond", Georgia, "Times New Roman", serif;
+      line-height: 1.65;
+      color: #222;
+      background-color: #fcfbf9;
+    }
+    body, h1, h2, h3, h4, h5, h6, p, dd, dt, li, address, a,
+    .nav, .nav > li > a, footer, .navbar, blockquote, q, button, input, select, textarea {
+      font-family: inherit;
+    }
+
+    /* Body links: a clear, readable Yale-family blue */
+    a, a:visited {
+      color: #2C5DAA;
+    }
+    a:hover, a:focus {
+      color: #00356B;
+      text-decoration: underline;
+    }
+
+    /* Sidebar nav links: dark navbar-inverse background needs light text */
+    .nav.navbar-inverse > li > a,
+    .nav.navbar-inverse > li > a:visited {
+      color: #f7f5f0;
+    }
+    .nav.navbar-inverse > li > a:hover,
+    .nav.navbar-inverse > li > a:focus {
+      color: #ffffff;
+      background-color: #1a1a1a;
+      text-decoration: none;
+    }
+
+    /* Pill-button action links (Abstract, Slides, BibTeX...), inspired by allenanhu.com */
+    .action-btn {
+      display: inline-block;
+      padding: 2px 10px;
+      margin: 2px 4px 2px 0;
+      border: 1px solid #00356B;
+      border-radius: 4px;
+      font-size: 14px;
+      line-height: 1.5;
+      color: #00356B;
+      background-color: #ffffff;
+      text-decoration: none;
+      transition: color .15s ease, background-color .15s ease;
+    }
+    .action-btn:hover, .action-btn:focus, .action-btn:visited {
+      color: #ffffff;
+      background-color: #00356B;
+      text-decoration: none;
+    }
+    /* Link buttons (Slides, SSRN, arXiv...) are dark from the start; only Abstract + stays light */
+    .action-btn:not([onclick]) {
+      color: #ffffff;
+      background-color: #00356B;
+    }
+
+    /* Abstract box (click-to-expand), inspired by allenanhu.com */
+    .abstract-box {
+      display: none;
+      background-color: #f7f5f0;
+      border-left: 3px solid #00356B;
+      border-radius: 4px;
+      padding: 12px 16px;
+      margin: 8px 0 4px 0;
+      font-size: 16px;
+      color: #1f1f1f;
+      text-align: justify;
+      line-height: 1.55;
+    }
+  </style>
+  <!-- This scale controls the view on mobile devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=.8">
+
+  <!-- MathJax -->
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+
+  <!-- <meta name="google-site-verification" content="bnON3Ikv2p0hZo3Q4uwccL8e01-cX66w1F0lKaN63ZA" /> -->
+
+
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<body>
+  <!-- JavaScript plugins (requires jQuery) -->
+  <script src="http://code.jquery.com/jquery.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.min.js"></script>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3">
+        {% include nav-bar.html %}
+      </div>
+      <div class="col-sm-9">
+        {{ content }}
+      </div>
+    </div>
+    <footer class="text-center" style="font-size: 12px; color: #999;">
+      <hr />
+      @ Daojing Zhai (2026)
+      <br /><br />
+    </footer>
+  </div>
+</body>
+</html>
